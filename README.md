@@ -15,7 +15,9 @@ Weather Dashboard using API
 
 # Images
 
-<img src="Images/Weather1" alt="">
+<img src="Images/Weather1.png" alt="Weather Dashboard Start Screen">
+<img src="Images/Weather2.png" alt="Weather Dashboard Displaying Chicago Current and 5-Day Forecast">
+<img src="Images/Weather3.png" alt="Weather Dashboard Displaying Los Angeles Forecast and Search History">
 
 
 # Link
