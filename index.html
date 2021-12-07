@@ -2,28 +2,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet">
-    <script src="script.js"></script>
     <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+        <link href="style.css" rel="stylesheet">
 </head>
 <body>
-    <header class="top"> 
-        <h1>WEATHER DASHBOARD </h1>
-    </header>
-    <aside class="searchArea">
-        <form class="search">
-            <label for='citySearch'>Search City:</label>
-            <input type="search" id="cityInput" placeholder="City Name...">
-            <button type="submit" id="searchbtn">GO</button>
+    <nav class="navbar navbar-dark bg-dark justify-content-center">
+        <div class="container-fluid-nav">
+            <div class="navbar-header">
+                <span class="navbar-brand mb-0 h1" style="font-size: 36px">Weather Dashboard</span>
+            </div>
         </div>
-        <div class="history">Search History</div>
-    </aside>
-    <div class="current">Current City</div>
-    <br/>
-    <div class="fiveDay">5 Day Forecast</div>
-    <div class="row" id="fiveDay"></div>
-    
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 bg-light pb-3 pt-3">
+                <aside>
+                    <form class="form-inline my-2 my-lg-0">
+                        <label for="citySearch">Search for a City:</label>
+                        <input class="form-control mr-0" type="search" placeholder="Search" aria-label="Search"
+                            id="cityInput">
+                        <button class="btn btn-primary my-2 my-sm-0" type="submit" id="searchbtn">
+                            <i class="fas fa-search"></i></button>
+                    </form>
+                    <br>
+                    <div class="list-group" id="city-list">
+                    </div>
+                </aside>
+            </div> 
+            <div class="col-md-9" id="city-column" style="visibility: hidden">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card mt-3">
+                            <div class="card-body" id="weather-data">
+                            </div>
+                        </div>
+                    </div> 
+                </div> 
+                <br>
+                <div class="row ml-1">
+                    <h2>5-Day Forecast:</h2>
+                </div> 
+                <div class="row" id="forecast-data">
+                </div> 
+            </div> 
+        </div> 
+    </div> 
+    <div class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Weather Dashboard Message</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id="errorMsg"></p> 
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
 </body>
+
 </html>
