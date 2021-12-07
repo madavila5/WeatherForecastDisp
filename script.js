@@ -12,27 +12,53 @@ var lastSearch = -1;
 
 citySaved();
 $(#searchbtn).click(doSearch);
-//section for city api
+//section geting localstorage saved searches
 function citySaved(){
     var searchList = JSON.parse(localStorage.getItem(savedSearchesName));
-    lastSearchIndex = localStorage.getItem(lastSearchName);
-    
-        // If valid list returned, set global variable to it
-        if (searchList) {
-            savedSearches = searchList;
-            displaySavedSearches(); // Load displayed city list
-            displayWeatherData(); // Display last viewed city
-        }
+    lastSearch = localStorage.getItem(lastSearchName);
+    if (searchList) {
+        savedSearches = searchList;
+        searchDisplay(); // Load displayed city list
+        weatherDisplay(); // Display last viewed city
     }
 }
 
-//section for 5 day forcast
+function getCityWeather(event){
+    event.preventDefault();
+    lastSearch = $(this).attr("value");
+    localStorage.setItem(lastSearchName, lastSearch);
+    weatherDisplay();
+}
 
-
-//Section for Search
-function 
-
-//Section for Search History
-function cityList(){
+//Save city
+function setSavedSearch(){
+    if (savedSearch.length .0) {
+        localStorage.setItem(lastSearchName, lastSearch);
+        localStorage.setItem(savedSearchesName, JSON.stringify(savedSearche))
+    }
+}
+//display search
+function searchDisplay(){
 
 }
+
+function cityInfo(){
+
+}
+
+function weatherDisplay(){
+
+}
+
+function doSearch(event){
+    event.preventDefault();
+    
+}
+
+
+
+
+
+
+
+
